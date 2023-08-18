@@ -208,7 +208,7 @@ db.createCollection('medico',{
             },
             med_especialidad: {
                 bsonType: "int",
-                description: "cit_medico",
+                description: "med_especialidad",
             }}
     }
 }            
