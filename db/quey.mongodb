@@ -243,11 +243,11 @@ db.createCollection('consultorio',{
           properties: {
             cons_codigo: {
               bsonType: "int",
-              description: "esp_id",
+              description: "cons_codigo",
             },
             cons_nombre: {
               bsonType: "string",
-              description: "esp_nombre",
+              description: "cons_nombre",
             }
         }
     }
