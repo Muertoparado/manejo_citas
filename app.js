@@ -3,7 +3,9 @@ import express from 'express';
 dotenv.config();
 let app=express();
  app.use(express.json());
- //app.use("/a")
+ app.use("/a", ()=>{
+    console.log("dsfsf");
+ })
 
  let config = JSON.parse(process.env.MY_SERVER);
 

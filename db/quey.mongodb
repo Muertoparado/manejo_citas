@@ -1,0 +1,255 @@
+use('pruebaj');
+db.createCollection('tipo_documento',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["tipodoc_id", "tipodoc_nombre", "tipodoc_abreviatura"],
+          properties: {
+            tipodoc_id: {
+              bsonType: "int",
+              description: "tipo doc",
+            },
+            tipodoc_nombre: {
+              bsonType: "string",
+              description: "Nombre",
+            },
+            tipodoc_abreviatura: {
+              bsonType: "string",
+              description: "abreviatura",
+            }
+        }
+    }
+}            
+});
+
+use('pruebaj');
+db.createCollection('genero',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["gen_id", "gen_nombre", "gen_abreviatura"],
+          properties: {
+            gen_id: {
+              bsonType: "int",
+              description: "tipo doc",
+            },
+            gen_nombre: {
+              bsonType: "string",
+              description: "Nombre",
+            },
+            gen_abreviatura: {
+              bsonType: "string",
+              description: "abreviatura",
+            }
+        }
+    }
+}            
+});
+
+use('pruebaj');
+db.createCollection('acudiente',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["acu_codigo", "acu_nombreCompleto", "acu_telefono","acu_direccion"],
+          properties: {
+            acu_codigo: {
+              bsonType: "int",
+              description: "tipo doc",
+            },
+            acu_nombreCompleto: {
+              bsonType: "string",
+              description: "Nombre",
+            },
+            acu_telefono: {
+              bsonType: "string",
+              description: "abreviatura",
+            },
+            acu_direccion: {
+                bsonType: "string",
+                description: "abreviatura",
+              }
+        }
+    }
+}            
+});
+
+
+use('pruebaj');
+db.createCollection('usuario',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["usu_codigo", "usu_nombre", "usu_segdo_nombre","usu_primer_apellido","usu_segdo_apellido","usu_telefono","usu_direccion","usu_email","usu_tipodoc","usu_genero","usu_acudiente"],
+          properties: {
+            usu_codigo: {
+              bsonType: "int",
+              description: "tipo doc",
+            },
+            usu_nombre: {
+              bsonType: "string",
+              description: "Nombre",
+            },
+            usu_segdo_nombre: {
+              bsonType: "string",
+              description: "usu_segdo_nombre",
+            },
+            usu_primer_apellido: {
+                bsonType: "string",
+                description: "usu_primer_apellido",
+              },
+              usu_segdo_apellido: {
+                bsonType: "string",
+                description: "usu_segdo_apellido",
+              },
+              usu_telefono: {
+                bsonType: "string",
+                description: "usu_telefono",
+              },
+              usu_direccion: {
+                bsonType: "string",
+                description: "usu_direccion",
+              },
+              usu_email: {
+                bsonType: "string",
+                description: "usu_email",
+              },
+              usu_tipodoc: {
+                bsonType: "string",
+                description: "usu_tipodoc",
+              },
+              usu_genero: {
+                bsonType: "string",
+                description: "usu_genero",
+              },
+              usu_acudiente: {
+                bsonType: "string",
+                description: "usu_acudiente",
+              }
+        }
+    }
+}            
+});
+
+
+use('pruebaj');
+db.createCollection('cita',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["cit_codigo", "cit_fecha", "cit_estadoCita","cit_medico","cit-datosUsuario"],
+          properties: {
+            cit_codigo: {
+              bsonType: "int",
+              description: "cit_codigo",
+            },
+            cit_fecha: {
+              bsonType: "string",
+              description: "cit_fecha",
+            },
+            cit_estadoCita: {
+              bsonType: "int",
+              description: "cit_estadoCita",
+            },
+            cit_medico: {
+                bsonType: "int",
+                description: "cit_medico",
+              },
+              datosUsuario: {
+                bsonType: "int",
+                description: "datosUsuario",
+              }
+        }
+    }
+}            
+});
+
+
+use('pruebaj');
+db.createCollection('estado_cita',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["estcita_id", "esp_nombre"],
+          properties: {
+            estcita_id: {
+              bsonType: "int",
+              description: "estcita_id",
+            },
+            esp_nombre: {
+              bsonType: "string",
+              description: "esp_nombre",
+            }
+        }
+    }
+}            
+});
+
+
+
+use('pruebaj');
+db.createCollection('medico',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["med_nroMatricula", "med_nombreCompleto", "med_consultorio","med_especialidad"],
+          properties: {
+            med_nroMatricula: {
+              bsonType: "int",
+              description: "med_nroMatricula",
+            },
+            med_nombreCompleto: {
+              bsonType: "string",
+              description: "med_nombreCompleto",
+            },
+            med_consultorio: {
+              bsonType: "int",
+              description: "med_consultorio",
+            },
+            med_especialidad: {
+                bsonType: "int",
+                description: "cit_medico",
+            }}
+    }
+}            
+});
+
+use('pruebaj');
+db.createCollection('especialidad',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["esp_id", "esp_nombre"],
+          properties: {
+            esp_id: {
+              bsonType: "int",
+              description: "esp_id",
+            },
+            esp_nombre: {
+              bsonType: "string",
+              description: "esp_nombre",
+            }
+        }
+    }
+}            
+});
+
+use('pruebaj');
+db.createCollection('consultorio',{
+    validator: {
+        $jsonSchema: {
+          bsonType: "object",
+          required: ["cons_codigo", "cons_nombre"],
+          properties: {
+            cons_codigo: {
+              bsonType: "int",
+              description: "esp_id",
+            },
+            cons_nombre: {
+              bsonType: "string",
+              description: "esp_nombre",
+            }
+        }
+    }
+}            
+});
